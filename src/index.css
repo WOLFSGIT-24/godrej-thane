@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  /* Godrej Thane Brand Palette: #672C57 Plum & #F2B707 Gold */
+  --color-plum: #672C57;
+  --color-plum-dark: #4A1A3D;
+  --color-plum-deep: #2E0E26;
+  --color-plum-light: #7E366B;
+  
+  --color-brand-gold: #F2B707;
+  --color-brand-gold-hover: #D9A304;
+  --color-brand-gold-light: #FDE89C;
+
+  /* Theme color mapping for instant compatibility across all components */
+  --color-navy-dark: #4A1A3D;
+  --color-navy-primary: #672C57;
+  --color-navy-light: #7E366B;
+  
+  /* Warm Champagne & Alabaster Whites */
+  --color-champagne: #FDF6E2;
+  --color-marble: #FAF7F9;
+  --color-brand-stone-beige: #EADFE7;
+  
+  /* Royal Gold & Metallic Accents */
+  --color-gold: #F2B707;
+  --color-gold-dark: #D49F04;
+  --color-bronze: #8E7044;
+  
+  /* Text & Contrast */
+  --color-charcoal: #1F141D;
+  --color-gray-text: #5C4B57;
+  
+  /* Clean Modern Luxury Typography */
+  --font-display: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-accent: "Outfit", sans-serif;
+  
+  --animate-fade-in: fade-in 0.8s ease-out;
+  --animate-slide-up: slide-up 0.8s ease-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+html {
+  scroll-behavior: smooth;
+  font-variant-numeric: lining-nums proportional-nums;
+  -webkit-font-feature-settings: "lnum" 1;
+  font-feature-settings: "lnum" 1;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-marble);
+  color: var(--color-charcoal);
+  overflow-x: hidden;
+  font-variant-numeric: lining-nums proportional-nums;
+  -webkit-font-feature-settings: "lnum" 1;
+  font-feature-settings: "lnum" 1;
+}
+
+/* Ensure all numerals and currency symbols align flat on the baseline */
+h1, h2, h3, h4, h5, h6, p, span, div, button {
+  font-variant-numeric: lining-nums proportional-nums;
+  -webkit-font-feature-settings: "lnum" 1;
+  font-feature-settings: "lnum" 1;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-navy-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-navy-dark);
+}
