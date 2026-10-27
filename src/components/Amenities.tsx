@@ -8,25 +8,8 @@ interface AmenitiesProps {
 
 export default function Amenities({ onOpenEnquiry }: AmenitiesProps) {
   const [activeTab, setActiveTab] = useState(0);
-  const [currentSlideIdx, setCurrentSlideIdx] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
 
   const activeAmenity = amenitiesData[activeTab];
-  const slideImages = activeAmenity.images || [activeAmenity.imageUrl];
-
-  useEffect(() => {
-    setCurrentSlideIdx(0);
-  }, [activeTab]);
-
-  useEffect(() => {
-    if (isHovered) return;
-
-    const timer = setInterval(() => {
-      setCurrentSlideIdx((prev) => (prev + 1) % slideImages.length);
-    }, 3500);
-
-    return () => clearInterval(timer);
-  }, [activeTab, isHovered, slideImages.length]);
 
 
   return (
@@ -83,35 +66,26 @@ export default function Amenities({ onOpenEnquiry }: AmenitiesProps) {
             })}
           </div>
 
-          {/* Bottom on Mobile, Left Column on Desktop: Visual Card with Content Overlay */}
+          {/* Bottom on Mobile, Left Column on Desktop: Content Card (No Image) */}
           <div 
-            className="order-2 lg:order-1 lg:col-span-8 relative rounded-2xl overflow-hidden shadow-2xl min-h-[420px] sm:min-h-[480px] flex flex-col justify-end p-6 sm:p-10 text-white group cursor-pointer border border-navy-primary/10"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+            className="order-2 lg:order-1 lg:col-span-8 relative rounded-2xl overflow-hidden shadow-2xl min-h-[380px] sm:min-h-[420px] flex flex-col justify-between p-6 sm:p-10 text-white bg-gradient-to-br from-[#4A1A3D] via-[#35102A] to-[#200A1A] border border-[#F2B707]/30"
           >
-            {/* Background Image Slider */}
-            <div className="absolute inset-0 z-0">
-              {slideImages.map((src, sIdx) => (
-                <img
-                  key={src}
-                  src={src}
-                  alt={`${activeAmenity.title} view ${sIdx + 1}`}
-                  loading="lazy"
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
-                    sIdx === currentSlideIdx ? "opacity-100 z-10" : "opacity-0 z-0"
-                  }`}
-                />
-              ))}
-              {/* Permanent Gradient Overlay for Legibility */}
-              <div className="absolute inset-0 z-20 bg-gradient-to-t from-navy-dark/95 via-navy-dark/60 to-navy-dark/20" />
-            </div>
+            {/* Subtle luxury glow accents */}
+            <div className="absolute top-0 right-0 w-72 h-72 bg-[#F2B707]/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#672C57]/30 rounded-full blur-2xl pointer-events-none" />
 
-            {/* Content overlay */}
-            <div className="relative z-30 space-y-3.5">
-              <span className="px-3.5 py-1 bg-gold/20 backdrop-blur-md text-gold rounded-full font-body text-[10px] font-bold tracking-widest uppercase inline-block border border-gold/30">
+            {/* Top Category Badge */}
+            <div className="relative z-10 flex items-center justify-between">
+              <span className="px-3.5 py-1 bg-[#F2B707]/20 backdrop-blur-md text-[#F2B707] rounded-full font-body text-[10px] font-bold tracking-widest uppercase inline-block border border-[#F2B707]/30">
                 {activeAmenity.category}
               </span>
-              
+              <span className="text-white/40 font-display text-sm font-bold">
+                0{activeTab + 1} / 0{amenitiesData.length}
+              </span>
+            </div>
+            
+            {/* Content Details */}
+            <div className="relative z-10 space-y-4 pt-6">
               <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
                 {activeAmenity.title}
               </h3>
@@ -121,10 +95,10 @@ export default function Amenities({ onOpenEnquiry }: AmenitiesProps) {
               </p>
               
               {/* Clean bullet pointers */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 pt-4 border-t border-white/15">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 pt-5 border-t border-white/15">
                 {activeAmenity.bullets.map((bullet, bIdx) => (
-                  <div key={bIdx} className="flex items-center gap-2.5 text-xs sm:text-sm text-champagne/95">
-                    <div className="w-1.5 h-1.5 rounded-full bg-gold shrink-0" />
+                  <div key={bIdx} className="flex items-center gap-2.5 text-xs sm:text-sm text-white/95">
+                    <div className="w-2 h-2 rounded-full bg-[#F2B707] shrink-0" />
                     <span>{bullet}</span>
                   </div>
                 ))}

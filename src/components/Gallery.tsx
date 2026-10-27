@@ -1,15 +1,11 @@
 import React from "react";
 
 const images = [
-  "/cricpitch.jpg",
-  "/indoor-games.jpg",
-  "/kitchen.jpg",
-  "/kidsplay.jpg",
-  "/pet-park.jpg",
-  "/partyhall.jpg",
-  "/balcony.png",
-  "/building.png",
-  "/roof5.jpg"
+  "/gallery1.jpg",
+  "/gallery2.jpg",
+  "/gallery3.jpg",
+  "/gallery4.jpg",
+  "/gallery5.jpg"
 ];
 
 export default function Gallery() {
@@ -38,7 +34,7 @@ export default function Gallery() {
         .animate-marquee {
           display: flex;
           width: max-content;
-          animation: marquee 30s linear infinite;
+          animation: marquee 35s linear infinite;
         }
         /* Pause scrolling on touch/hover for better mobile interaction */
         .animate-marquee:active,
@@ -50,14 +46,14 @@ export default function Gallery() {
       {/* Gallery Container - Infinite Scroll Marquee (Full Width) */}
       <div className="w-full overflow-hidden relative py-2 mt-4">
         <div className="animate-marquee gap-4 md:gap-6">
-          {[...images, ...images].map((src, idx) => (
+          {[...images, ...images, ...images, ...images].map((src, idx) => (
             <div 
               key={idx}
-              className="flex-shrink-0 w-[70vw] sm:w-[45vw] md:w-[350px] aspect-[4/3] rounded-xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] relative group"
+              className="flex-shrink-0 w-[70vw] sm:w-[45vw] md:w-[350px] aspect-[4/3] rounded-xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] relative group border border-navy-primary/10 bg-white"
             >
               <img
                 src={src}
-                alt={`Gallery space ${idx + 1}`}
+                alt={`Godrej Thane Gallery ${src}`}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
               />
