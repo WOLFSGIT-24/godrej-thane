@@ -218,13 +218,13 @@ export default function App() {
         onAddMockLeads={handleAddMockLeads}
       />
 
-      {/* Fixed Mobile Bottom CTA Bar with Plum and Gold Brand Colors */}
+      {/* Fixed Mobile Bottom CTA Bar with Plum and Champagne Brand Colors */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 flex shadow-[0_-10px_30px_rgba(103,44,87,0.3)]">
         <a 
           href="tel:+919035679657" 
-          className="flex-1 flex items-center justify-center gap-2 bg-[#672C57] text-white font-body text-[13px] font-extrabold uppercase tracking-[0.15em] py-4 transition-colors hover:bg-[#4A1A3D] border-r border-[#F2B707]/30"
+          className="flex-1 flex items-center justify-center gap-2 bg-[#672C57] text-white font-body text-[13px] font-extrabold uppercase tracking-[0.15em] py-4 transition-colors hover:bg-[#4A1A3D] border-r border-[#D4B28C]/30"
         >
-          <Phone className="h-4 w-4 text-[#F2B707] fill-[#F2B707]" />
+          <Phone className="h-4 w-4 text-[#D4B28C] fill-[#D4B28C]" />
           Call Now
         </a>
         <button 
@@ -232,7 +232,7 @@ export default function App() {
             setPreselectedUnit(null);
             setOfferOpen(true);
           }}
-          className="flex-1 flex items-center justify-center bg-[#F2B707] text-[#1F141D] font-body text-[13px] font-extrabold uppercase tracking-[0.15em] py-4 transition-colors hover:bg-[#d9a304]"
+          className="flex-1 flex items-center justify-center bg-[#D4B28C] text-[#1F141D] font-body text-[13px] font-extrabold uppercase tracking-[0.15em] py-4 transition-colors hover:bg-[#C8A97E]"
         >
           Enquire Now
         </button>

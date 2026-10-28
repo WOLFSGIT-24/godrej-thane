@@ -1,30 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { projectOverviewData } from "../data";
 
 export default function IntimateScale() {
-  const images = ["/building.png", "/balcony.png", "/building2.jpg", "/building3.jpg", "/building4.jpg"];
-  const [currentIdx, setCurrentIdx] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIdx((prev) => (prev + 1) % images.length);
-    }, 3500);
-    return () => clearInterval(timer);
-  }, [images.length]);
-
-  const renderSlider = () => (
-    <div className="relative overflow-hidden rounded-xl shadow-2xl w-full max-w-2xl aspect-[3/2] border border-navy-primary/10">
-      {images.map((src, idx) => (
-        <img
-          key={src}
-          src={src}
-          alt={`Godrej Thane Landmark View ${idx + 1}`}
-          loading="lazy"
-          className={`absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-1000 ease-in-out ${
-            idx === currentIdx ? "opacity-100 z-10" : "opacity-0 z-0"
-          }`}
-        />
-      ))}
+  const renderImage = () => (
+    <div className="relative overflow-hidden rounded-xl shadow-2xl w-full max-w-2xl aspect-[3/2] border border-navy-primary/10 group">
+      <img
+        src="/second.jpg"
+        alt="Godrej Thane 18-Acre Masterplan Overview"
+        loading="lazy"
+        className="w-full h-full object-cover rounded-xl transition-transform duration-700 ease-out group-hover:scale-105"
+      />
       <div className="absolute bottom-4 right-4 z-20 bg-navy-dark/90 backdrop-blur-sm text-gold px-3 py-1 rounded-sm border border-gold/30 text-[10px] font-bold font-body uppercase tracking-widest">
         18-Acre Masterplan
       </div>
@@ -46,9 +31,9 @@ export default function IntimateScale() {
             </h2>
             <div className="h-[2px] w-16 bg-gold mx-auto lg:mx-0" />
 
-            {/* Mobile Only Responsive Image Slider */}
+            {/* Mobile Only Responsive Image */}
             <div className="lg:hidden w-full my-6">
-              {renderSlider()}
+              {renderImage()}
             </div>
 
             <div className="space-y-4 pt-2">
@@ -60,12 +45,12 @@ export default function IntimateScale() {
             </div>
           </div>
 
-          {/* Graphical Right Panel with Slider (Desktop Only) */}
+          {/* Graphical Right Panel (Desktop Only) */}
           <div className="hidden lg:block lg:col-span-6 relative flex justify-center">
             {/* Elegant Background Framing */}
             <div className="absolute inset-0 bg-champagne/40 rounded-2xl transform rotate-2 translate-x-3 translate-y-3 scale-98 border border-gold/20" />
             
-            {renderSlider()}
+            {renderImage()}
           </div>
 
         </div>

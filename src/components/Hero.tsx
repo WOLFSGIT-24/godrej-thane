@@ -81,7 +81,7 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
         <div className="w-full lg:w-1/2 flex flex-col items-start text-left relative z-20 px-2 sm:px-0">
 
           <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl text-[#672C57] font-bold tracking-tight leading-[1.15] mb-4 animate-fade-in">
-            GODREJ <span className="text-[#F2B707]">THANE</span> – UPCOMING LUXURY LAUNCH
+            GODREJ <span className="text-[#D4B28C]">THANE</span> – UPCOMING LUXURY LAUNCH
           </h1>
 
           <p className="font-body text-sm sm:text-base text-gray-text mb-6 animate-fade-in delay-100 leading-relaxed max-w-xl">
@@ -93,9 +93,9 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
             {highlights.map((item, idx) => (
               <div
                 key={idx}
-                className="flex items-center gap-2.5 bg-white/80 backdrop-blur-sm border border-[#672C57]/15 px-3 py-2.5 rounded-lg hover:border-[#F2B707] transition-colors"
+                className="flex items-center gap-2.5 bg-white/80 backdrop-blur-sm border border-[#672C57]/15 px-3 py-2.5 rounded-lg hover:border-[#D4B28C] transition-colors"
               >
-                <div className="w-2 h-2 rounded-full bg-[#F2B707] shrink-0" />
+                <div className="w-2 h-2 rounded-full bg-[#D4B28C] shrink-0" />
                 <span className="font-body text-xs font-semibold text-[#672C57]">
                   {item}
                 </span>
@@ -104,9 +104,9 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
           </div>
 
           {/* Pricing Box (Desktop) */}
-          <div className="hidden lg:flex items-center justify-between bg-[#4A1A3D] text-white py-4 px-6 relative transform hover:-translate-y-1 transition-transform duration-300 w-full max-w-lg shadow-xl animate-slide-up delay-300 mb-8 rounded-xl border border-[#F2B707]/40">
+          <div className="hidden lg:flex items-center justify-between bg-[#4A1A3D] text-white py-4 px-6 relative transform hover:-translate-y-1 transition-transform duration-300 w-full max-w-lg shadow-xl animate-slide-up delay-300 mb-8 rounded-xl border border-[#D4B28C]/40">
             <div>
-              <div className="text-[10px] text-[#F2B707] uppercase tracking-widest font-extrabold mb-0.5">
+              <div className="text-[10px] text-[#D4B28C] uppercase tracking-widest font-extrabold mb-0.5">
                 Pre-Launch Pricing
               </div>
               <div className="font-display text-2xl font-bold text-white leading-tight">
@@ -120,10 +120,10 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
             <div className="h-10 w-[1px] bg-white/15 mx-4" />
 
             <div className="text-right">
-              <div className="text-[10px] text-[#F2B707] uppercase tracking-widest font-extrabold mb-0.5">
+              <div className="text-[10px] text-[#D4B28C] uppercase tracking-widest font-extrabold mb-0.5">
                 Pre-Launch EOI
               </div>
-              <div className="font-display text-xl font-bold text-[#F2B707] leading-tight">
+              <div className="font-display text-xl font-bold text-[#D4B28C] leading-tight">
                 ₹2.70 Lakh*
               </div>
               <div className="text-[10px] text-white/80 font-body">
@@ -136,10 +136,10 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
           <div className="flex flex-col sm:flex-row gap-4 animate-slide-up delay-400 w-full sm:w-auto relative z-30">
             <button
               onClick={onOpenEnquiry}
-              className="flex items-center justify-center gap-2 bg-[#672C57] text-white font-body text-xs font-bold tracking-widest uppercase px-8 py-4 hover:bg-[#4A1A3D] hover:shadow-lg transition-all shadow-md w-full sm:w-auto rounded-full cursor-pointer border border-[#F2B707]/30"
+              className="flex items-center justify-center gap-2 bg-[#672C57] text-white font-body text-xs font-bold tracking-widest uppercase px-8 py-4 hover:bg-[#4A1A3D] hover:shadow-lg transition-all shadow-md w-full sm:w-auto rounded-full cursor-pointer border border-[#D4B28C]/30"
             >
               Get Pre-Launch Details
-              <ArrowRight className="h-4 w-4 text-[#F2B707]" />
+              <ArrowRight className="h-4 w-4 text-[#D4B28C]" />
             </button>
           </div>
         </div>

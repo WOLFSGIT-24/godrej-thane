@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  /* Godrej Thane Brand Palette: #672C57 Plum & #F2B707 Gold */
+  /* Godrej Thane Brand Palette: #672C57 Plum & #D4B28C Warm Champagne */
   --color-plum: #672C57;
   --color-plum-dark: #4A1A3D;
   --color-plum-deep: #2E0E26;
   --color-plum-light: #7E366B;
   
-  --color-brand-gold: #F2B707;
-  --color-brand-gold-hover: #D9A304;
-  --color-brand-gold-light: #FDE89C;
+  --color-brand-gold: #D4B28C;
+  --color-brand-gold-hover: #C8A97E;
+  --color-brand-gold-light: #F7F0E8;
 
   /* Theme color mapping for instant compatibility across all components */
   --color-navy-dark: #4A1A3D;
@@ -17,13 +17,13 @@
   --color-navy-light: #7E366B;
   
   /* Warm Champagne & Alabaster Whites */
-  --color-champagne: #FDF6E2;
+  --color-champagne: #FAF2E6;
   --color-marble: #FAF7F9;
   --color-brand-stone-beige: #EADFE7;
   
-  /* Royal Gold & Metallic Accents */
-  --color-gold: #F2B707;
-  --color-gold-dark: #D49F04;
+  /* Warm Champagne & Muted Sand Accents */
+  --color-gold: #D4B28C;
+  --color-gold-dark: #A87E4F;
   --color-bronze: #8E7044;
   
   /* Text & Contrast */

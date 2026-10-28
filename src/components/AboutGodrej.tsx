@@ -55,7 +55,7 @@ export default function AboutGodrej({ onOpenEnquiry }: AboutGodrejProps) {
                       <div className="w-12 h-12 rounded-full bg-gold/15 text-gold flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                         <IconComponent className="h-6 w-6" />
                       </div>
-                      <div className="font-display text-2xl sm:text-3xl font-extrabold text-[#F2B707] mb-1">
+                      <div className="font-display text-2xl sm:text-3xl font-extrabold text-[#D4B28C] mb-1">
                         {stat.value}
                       </div>
                       <div className="font-body text-xs font-bold text-white uppercase tracking-wider mb-2">

@@ -68,15 +68,15 @@ export default function Amenities({ onOpenEnquiry }: AmenitiesProps) {
 
           {/* Bottom on Mobile, Left Column on Desktop: Content Card (No Image) */}
           <div 
-            className="order-2 lg:order-1 lg:col-span-8 relative rounded-2xl overflow-hidden shadow-2xl min-h-[380px] sm:min-h-[420px] flex flex-col justify-between p-6 sm:p-10 text-white bg-gradient-to-br from-[#4A1A3D] via-[#35102A] to-[#200A1A] border border-[#F2B707]/30"
+            className="order-2 lg:order-1 lg:col-span-8 relative rounded-2xl overflow-hidden shadow-2xl min-h-[380px] sm:min-h-[420px] flex flex-col justify-between p-6 sm:p-10 text-white bg-gradient-to-br from-[#4A1A3D] via-[#35102A] to-[#200A1A] border border-[#D4B28C]/30"
           >
             {/* Subtle luxury glow accents */}
-            <div className="absolute top-0 right-0 w-72 h-72 bg-[#F2B707]/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-72 h-72 bg-[#D4B28C]/10 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#672C57]/30 rounded-full blur-2xl pointer-events-none" />
 
             {/* Top Category Badge */}
             <div className="relative z-10 flex items-center justify-between">
-              <span className="px-3.5 py-1 bg-[#F2B707]/20 backdrop-blur-md text-[#F2B707] rounded-full font-body text-[10px] font-bold tracking-widest uppercase inline-block border border-[#F2B707]/30">
+              <span className="px-3.5 py-1 bg-[#D4B28C]/20 backdrop-blur-md text-[#D4B28C] rounded-full font-body text-[10px] font-bold tracking-widest uppercase inline-block border border-[#D4B28C]/30">
                 {activeAmenity.category}
               </span>
               <span className="text-white/40 font-display text-sm font-bold">
@@ -98,7 +98,7 @@ export default function Amenities({ onOpenEnquiry }: AmenitiesProps) {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 pt-5 border-t border-white/15">
                 {activeAmenity.bullets.map((bullet, bIdx) => (
                   <div key={bIdx} className="flex items-center gap-2.5 text-xs sm:text-sm text-white/95">
-                    <div className="w-2 h-2 rounded-full bg-[#F2B707] shrink-0" />
+                    <div className="w-2 h-2 rounded-full bg-[#D4B28C] shrink-0" />
                     <span>{bullet}</span>
                   </div>
                 ))}

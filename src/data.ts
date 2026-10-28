@@ -30,7 +30,8 @@ export const projectOverviewData = {
   paragraphs: [
     "Godrej Properties is bringing a premium residential development to Thane West, spread across approximately 18 acres.",
     "Designed for buyers who value space, location and a trusted developer, this upcoming address brings together spacious residences, large-format planning and a grand podium within one development.",
-    "With residential spaces taking centre stage and future retail and commercial components planned, the project is set to introduce a new premium residential destination in Thane."
+    "With residential spaces taking centre stage and future retail and commercial components planned, the project is set to introduce a new premium residential destination in Thane.",
+    "Adding to its location advantage, the upcoming Thane–Borivali Tunnel is expected to reduce travel time between Thane and Borivali to approximately 15 minutes. The developing Metro Line 4 and 4A corridors will further strengthen connectivity across Thane and towards Mumbai, making everyday travel more convenient."
   ],
   keyHighlights: [
     "18 Acres of Premium Land",

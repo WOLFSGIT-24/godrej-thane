@@ -17,9 +17,9 @@ export default function Footer({ onOpenPrivacy, onOpenTerms }: FooterProps = {})
   };
 
   return (
-    <footer className="w-full bg-[#2E0E26] text-white/80 border-t border-[#F2B707]/30 py-16 md:py-20 relative overflow-hidden font-body">
+    <footer className="w-full bg-[#2E0E26] text-white/80 border-t border-[#D4B28C]/30 py-16 md:py-20 relative overflow-hidden font-body">
       {/* Radial warm lighting backdrop overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(242,183,7,0.06),transparent)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,178,140,0.06),transparent)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
@@ -33,11 +33,11 @@ export default function Footer({ onOpenPrivacy, onOpenTerms }: FooterProps = {})
                 <span className="font-display text-2xl font-bold tracking-tight text-white uppercase">
                   GODREJ
                 </span>
-                <span className="font-display text-2xl font-bold tracking-tight text-[#F2B707] uppercase">
+                <span className="font-display text-2xl font-bold tracking-tight text-[#D4B28C] uppercase">
                   THANE
                 </span>
               </div>
-              <span className="font-body text-[9.5px] font-extrabold tracking-[0.25em] text-[#F2B707] uppercase mt-1">
+              <span className="font-body text-[9.5px] font-extrabold tracking-[0.25em] text-[#D4B28C] uppercase mt-1">
                 PRE-LAUNCH ADVISORY • 18-ACRE LANDMARK
               </span>
             </div>

@@ -108,7 +108,7 @@ export default function BrochureForm({ onAddLead, preselectedUnit }: BrochureFor
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10">
         <div id="lead-capture-section" className="w-full flex justify-end">
-          <div id="lead-capture-form" className="w-full max-w-md bg-white/98 backdrop-blur-md text-charcoal p-6 sm:p-8 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.5)] relative overflow-hidden border border-[#F2B707]/30">
+          <div id="lead-capture-form" className="w-full max-w-md bg-white/98 backdrop-blur-md text-charcoal p-6 sm:p-8 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.5)] relative overflow-hidden border border-[#D4B28C]/30">
               <div className="absolute top-0 left-0 w-full h-[5px] bg-gradient-to-r from-gold via-champagne to-gold" />
 
               {!formSubmitted ? (
@@ -196,7 +196,7 @@ export default function BrochureForm({ onAddLead, preselectedUnit }: BrochureFor
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full flex items-center justify-center gap-2.5 bg-[#672C57] text-[#F2B707] hover:bg-[#F2B707] hover:text-[#1F141D] font-body text-xs font-extrabold tracking-widest uppercase px-8 py-4.5 transition-all shadow-lg rounded-full disabled:opacity-50 mt-5 cursor-pointer border border-[#F2B707]/40"
+                      className="w-full flex items-center justify-center gap-2.5 bg-[#672C57] text-[#D4B28C] hover:bg-[#D4B28C] hover:text-[#1F141D] font-body text-xs font-extrabold tracking-widest uppercase px-8 py-4.5 transition-all shadow-lg rounded-full disabled:opacity-50 mt-5 cursor-pointer border border-[#D4B28C]/40"
                     >
                       {loading ? (
                         <>
@@ -237,7 +237,7 @@ export default function BrochureForm({ onAddLead, preselectedUnit }: BrochureFor
                   <div className="flex justify-center pt-2">
                     <button
                       onClick={() => setFormSubmitted(false)}
-                      className="flex items-center justify-center gap-2 bg-[#672C57] text-[#F2B707] hover:bg-[#4A1A3D] font-body text-xs font-bold tracking-widest uppercase px-8 py-4 transition-colors shadow-lg rounded-full cursor-pointer border border-[#F2B707]/30"
+                      className="flex items-center justify-center gap-2 bg-[#672C57] text-[#D4B28C] hover:bg-[#4A1A3D] font-body text-xs font-bold tracking-widest uppercase px-8 py-4 transition-colors shadow-lg rounded-full cursor-pointer border border-[#D4B28C]/30"
                     >
                       Submit Another Query
                     </button>

@@ -77,10 +77,10 @@ export default function Header({ onOpenBooking, onToggleAdmin, isAdminActive }: 
             className="flex items-center gap-3 group focus:outline-none"
           >
             <div className="flex flex-col text-left">
-              <span className="font-accent text-lg sm:text-xl font-bold tracking-[0.2em] text-[#672C57] uppercase group-hover:text-[#F2B707] transition-colors">
+              <span className="font-accent text-lg sm:text-xl font-bold tracking-[0.2em] text-[#672C57] uppercase group-hover:text-[#D4B28C] transition-colors">
                 GODREJ
               </span>
-              <span className="font-body text-[9px] font-extrabold tracking-[0.3em] text-[#F2B707] uppercase -mt-0.5">
+              <span className="font-body text-[9px] font-extrabold tracking-[0.3em] text-[#D4B28C] uppercase -mt-0.5">
                 THANE WEST • 18 ACRES
               </span>
             </div>
@@ -101,7 +101,7 @@ export default function Header({ onOpenBooking, onToggleAdmin, isAdminActive }: 
               >
                 {link.label}
                 <span
-                  className={`absolute bottom-0 left-0 h-[2px] bg-[#F2B707] transition-all duration-300 ${
+                  className={`absolute bottom-0 left-0 h-[2px] bg-[#D4B28C] transition-all duration-300 ${
                     activeSection === link.id ? "w-full" : "w-0"
                   }`}
                 />
@@ -113,7 +113,7 @@ export default function Header({ onOpenBooking, onToggleAdmin, isAdminActive }: 
           <div className="flex items-center gap-4">
             <button
               onClick={onOpenBooking}
-              className="hidden md:flex items-center justify-center bg-[#672C57] text-white font-body text-xs font-bold tracking-widest uppercase px-6 py-3.5 hover:bg-[#4A1A3D] hover:shadow-[#F2B707]/20 transition-all shadow-md rounded-sm cursor-pointer border border-[#F2B707]/30"
+              className="hidden md:flex items-center justify-center bg-[#672C57] text-white font-body text-xs font-bold tracking-widest uppercase px-6 py-3.5 hover:bg-[#4A1A3D] hover:shadow-[#D4B28C]/20 transition-all shadow-md rounded-sm cursor-pointer border border-[#D4B28C]/30"
             >
               REGISTER INTEREST
             </button>
@@ -145,13 +145,13 @@ export default function Header({ onOpenBooking, onToggleAdmin, isAdminActive }: 
 
       {/* Mobile Drawer menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 top-20 bg-[#4A1A3D]/98 backdrop-blur-xl z-30 lg:hidden flex flex-col p-8 space-y-6 animate-fade-in border-t border-[#F2B707]/20">
+        <div className="fixed inset-0 top-20 bg-[#4A1A3D]/98 backdrop-blur-xl z-30 lg:hidden flex flex-col p-8 space-y-6 animate-fade-in border-t border-[#D4B28C]/20">
           {navLinks.map((link) => (
             <a
               key={link.id}
               href={`#${link.id}`}
               onClick={(e) => handleLinkClick(e, link.id)}
-              className="font-display text-xl font-medium text-white/90 hover:text-[#F2B707] tracking-wide py-2 border-b border-white/10"
+              className="font-display text-xl font-medium text-white/90 hover:text-[#D4B28C] tracking-wide py-2 border-b border-white/10"
             >
               {link.label}
             </a>
@@ -162,7 +162,7 @@ export default function Header({ onOpenBooking, onToggleAdmin, isAdminActive }: 
               setMobileMenuOpen(false);
               onOpenBooking();
             }}
-            className="w-full flex items-center justify-center bg-[#F2B707] text-[#1F141D] font-body text-xs font-bold tracking-widest uppercase px-8 py-4.5 hover:bg-white transition-colors shadow-lg rounded-sm mt-8 cursor-pointer"
+            className="w-full flex items-center justify-center bg-[#D4B28C] text-[#1F141D] font-body text-xs font-bold tracking-widest uppercase px-8 py-4.5 hover:bg-white transition-colors shadow-lg rounded-sm mt-8 cursor-pointer"
           >
             REGISTER YOUR INTEREST
           </button>
