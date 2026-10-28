@@ -24,61 +24,8 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full flex flex-col lg:flex-row items-center gap-8 lg:gap-14 py-8 lg:py-20 relative z-10">
         
-        {/* Left Side: Primary Architectural Image */}
-        <div className="w-full lg:w-1/2 relative mb-6 lg:mb-0">
-          <div className="relative shadow-2xl bg-white p-2.5 sm:p-3.5 z-10 rounded-sm border border-navy-primary/10">
-            <img
-              src="/hero.jpg"
-              alt="Godrej Thane Landmark Luxury Address"
-              fetchPriority="high"
-              className="w-full h-[52vh] sm:h-auto sm:aspect-[4/5] object-cover object-center rounded-xs"
-            />
-
-            {/* Premium Badge Top Left */}
-            <div className="absolute top-6 left-6 bg-navy-dark/90 backdrop-blur-md text-white px-3.5 py-1.5 rounded-xs border border-gold/40 shadow-lg flex items-center">
-              <span className="font-body text-[10px] font-bold tracking-[0.2em] text-champagne uppercase">
-                UPCOMING LUXURY LAUNCH
-              </span>
-            </div>
-
-            {/* Pricing Box (Mobile overlay) */}
-            <div className="lg:hidden absolute bottom-0 translate-y-[60%] left-1/2 -translate-x-1/2 w-[90%] max-w-[310px] bg-navy-dark text-white py-3.5 px-4 shadow-2xl z-20 rounded-sm border border-gold/40 text-center">
-              <div className="font-body text-[10px] font-bold tracking-widest text-gold uppercase">
-                Pre-Launch EOI Starting
-              </div>
-              <div className="text-2xl text-champagne font-bold font-display leading-tight mt-0.5">
-                ₹2.70 Lakh*
-              </div>
-              <div className="text-[10px] text-white/70 font-medium font-body mt-0.5">
-                Residences Starting ₹1.89 Cr*
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile Info Strip */}
-          <div className="lg:hidden mt-16 mx-1 p-4 bg-white rounded-lg border border-navy-primary/10 shadow-lg flex items-center justify-between text-left">
-            <div className="space-y-0.5 pr-2">
-              <div className="text-[11px] font-bold text-gold-dark uppercase tracking-wider font-body">
-                2, 3 & 4 BHK Luxury Homes
-              </div>
-              <div className="text-[17px] font-extrabold text-navy-primary font-display leading-none py-0.5">
-                Starting ₹1.89 Cr*
-              </div>
-            </div>
-
-            <div className="h-8 w-[1px] bg-navy-primary/15 mx-3" />
-
-            <div className="flex items-center gap-1.5 font-body shrink-0">
-              <MapPin className="h-4 w-4 text-gold-dark shrink-0" />
-              <span className="text-[14px] font-bold text-navy-primary uppercase tracking-wider">
-                Thane West
-              </span>
-            </div>
-          </div>
-        </div>
-
-        {/* Right Side: Content */}
-        <div className="w-full lg:w-1/2 flex flex-col items-start text-left relative z-20 px-2 sm:px-0">
+        {/* Left Side: Content */}
+        <div className="w-full lg:w-1/2 flex flex-col items-start text-left relative z-20 px-2 sm:px-0 order-2 lg:order-1">
 
           <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl text-[#672C57] font-bold tracking-tight leading-[1.15] mb-4 animate-fade-in">
             GODREJ <span className="text-[#D4B28C]">THANE</span> – UPCOMING LUXURY LAUNCH
@@ -141,6 +88,59 @@ export default function Hero({ onOpenEnquiry }: HeroProps) {
               Get Pre-Launch Details
               <ArrowRight className="h-4 w-4 text-[#D4B28C]" />
             </button>
+          </div>
+        </div>
+
+        {/* Right Side: Primary Architectural Image */}
+        <div className="w-full lg:w-1/2 relative mb-6 lg:mb-0 order-1 lg:order-2">
+          <div className="relative shadow-2xl bg-white p-2.5 sm:p-3.5 z-10 rounded-sm border border-navy-primary/10">
+            <img
+              src="/hero.jpg"
+              alt="Godrej Thane Landmark Luxury Address"
+              fetchPriority="high"
+              className="w-full h-[52vh] sm:h-auto sm:aspect-[4/5] object-cover object-center rounded-xs"
+            />
+
+            {/* Premium Badge Top Left */}
+            <div className="absolute top-6 left-6 bg-navy-dark/90 backdrop-blur-md text-white px-3.5 py-1.5 rounded-xs border border-gold/40 shadow-lg flex items-center">
+              <span className="font-body text-[10px] font-bold tracking-[0.2em] text-champagne uppercase">
+                UPCOMING LUXURY LAUNCH
+              </span>
+            </div>
+
+            {/* Pricing Box (Mobile overlay) */}
+            <div className="lg:hidden absolute bottom-0 translate-y-[60%] left-1/2 -translate-x-1/2 w-[90%] max-w-[310px] bg-navy-dark text-white py-3.5 px-4 shadow-2xl z-20 rounded-sm border border-gold/40 text-center">
+              <div className="font-body text-[10px] font-bold tracking-widest text-gold uppercase">
+                Pre-Launch EOI Starting
+              </div>
+              <div className="text-2xl text-champagne font-bold font-display leading-tight mt-0.5">
+                ₹2.70 Lakh*
+              </div>
+              <div className="text-[10px] text-white/70 font-medium font-body mt-0.5">
+                Residences Starting ₹1.89 Cr*
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile Info Strip */}
+          <div className="lg:hidden mt-16 mx-1 p-4 bg-white rounded-lg border border-navy-primary/10 shadow-lg flex items-center justify-between text-left">
+            <div className="space-y-0.5 pr-2">
+              <div className="text-[11px] font-bold text-gold-dark uppercase tracking-wider font-body">
+                2, 3 & 4 BHK Luxury Homes
+              </div>
+              <div className="text-[17px] font-extrabold text-navy-primary font-display leading-none py-0.5">
+                Starting ₹1.89 Cr*
+              </div>
+            </div>
+
+            <div className="h-8 w-[1px] bg-navy-primary/15 mx-3" />
+
+            <div className="flex items-center gap-1.5 font-body shrink-0">
+              <MapPin className="h-4 w-4 text-gold-dark shrink-0" />
+              <span className="text-[14px] font-bold text-navy-primary uppercase tracking-wider">
+                Thane West
+              </span>
+            </div>
           </div>
         </div>
       </div>
