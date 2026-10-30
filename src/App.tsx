@@ -17,9 +17,24 @@ import PrivacyPolicyModal from "./components/PrivacyPolicyModal";
 import TermsModal from "./components/TermsModal";
 import OfferModal from "./components/OfferModal";
 import FloatingEnquireTab from "./components/FloatingEnquireTab";
+import ThankYou from "./components/ThankYou";
 import { LeadSubmission } from "./types";
 
 const LOCAL_STORAGE_KEY = "godrej_thane_leads";
+
+const isThankYouRoute = () => {
+  if (typeof window === "undefined") return false;
+  const path = window.location.pathname.toLowerCase().replace(/\/$/, "");
+  const search = window.location.search.toLowerCase();
+  const hash = window.location.hash.toLowerCase();
+  return (
+    path === "/thank-you" ||
+    path.endsWith("/thank-you.html") ||
+    path.endsWith("/thank-you") ||
+    search.includes("thank-you") ||
+    hash.includes("thank-you")
+  );
+};
 
 export default function App() {
   const [leads, setLeads] = useState<LeadSubmission[]>([]);
@@ -37,6 +52,32 @@ export default function App() {
     }
   });
   const [deferredReady, setDeferredReady] = useState(false);
+  const [isThankYou, setIsThankYou] = useState(isThankYouRoute);
+  const [lastSubmittedLead, setLastSubmittedLead] = useState<LeadSubmission | null>(() => {
+    try {
+      const stored = sessionStorage.getItem("godrej_last_lead");
+      return stored ? JSON.parse(stored) : null;
+    } catch {
+      return null;
+    }
+  });
+
+  // Handle browser back and forward navigation for Thank You page
+  useEffect(() => {
+    const handlePopState = () => {
+      setIsThankYou(isThankYouRoute());
+    };
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  const handleBackToHome = () => {
+    if (typeof window !== "undefined") {
+      window.history.pushState({}, "", "/");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    setIsThankYou(false);
+  };
 
   // Delay render of below-the-fold sections to optimize FCP and LCP
   useEffect(() => {
@@ -111,10 +152,19 @@ export default function App() {
     saveLeadsToCache(updated);
     try {
       localStorage.setItem("floor_plans_unlocked", "true");
+      sessionStorage.setItem("godrej_last_lead", JSON.stringify(newLead));
     } catch (e) {
       console.error(e);
     }
     setFloorPlansUnlocked(true);
+    setLastSubmittedLead(newLead);
+    setOfferOpen(false);
+    setBookingOpen(false);
+    setIsThankYou(true);
+    if (typeof window !== "undefined") {
+      window.history.pushState({ page: "thank-you" }, "", "/thank-you");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   };
 
   const handleUpdateStatus = (id: string, status: LeadSubmission["status"]) => {
@@ -139,6 +189,15 @@ export default function App() {
   const handleHeroEnquiry = () => {
     setOfferOpen(true);
   };
+
+  if (isThankYou) {
+    return (
+      <ThankYou 
+        lead={lastSubmittedLead} 
+        onBackToHome={handleBackToHome} 
+      />
+    );
+  }
 
   return (
     <div className="relative min-h-screen bg-marble text-charcoal pb-20 md:pb-0 overflow-x-hidden w-full font-body">

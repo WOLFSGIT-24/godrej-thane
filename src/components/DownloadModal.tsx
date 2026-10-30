@@ -82,16 +82,10 @@ export default function DownloadModal({
         notes: "Requested brochure download via popup.",
       });
       setLoading(false);
-      setSubmitted(true);
       handleDownloadBrochure();
-      
-      // Auto close after 3 seconds
-      setTimeout(() => {
-        onClose();
-        setSubmitted(false); // reset for next time
-        setFormData({ fullName: "", email: "", phone: "" });
-      }, 3000);
-    }, 1000);
+      onClose();
+      setFormData({ fullName: "", email: "", phone: "" });
+    }, 600);
   };
 
   return (

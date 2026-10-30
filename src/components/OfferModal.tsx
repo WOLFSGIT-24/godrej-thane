@@ -85,7 +85,7 @@ export default function OfferModal({ isOpen, onClose, onAddLead }: OfferModalPro
     setErrors({});
     setLoading(true);
     
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 600));
     
     onAddLead({
       fullName: formData.fullName,
@@ -100,12 +100,7 @@ export default function OfferModal({ isOpen, onClose, onAddLead }: OfferModalPro
     });
     
     setLoading(false);
-    setSubmitted(true);
-    
-    setTimeout(() => {
-      onClose();
-      setTimeout(() => setSubmitted(false), 300);
-    }, 2800);
+    onClose();
   };
 
   return (

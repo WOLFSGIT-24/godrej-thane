@@ -74,9 +74,6 @@ export default function BrochureForm({ onAddLead, preselectedUnit }: BrochureFor
     setLoading(true);
 
     setTimeout(() => {
-      const generatedCode = "GT-" + Math.floor(100000 + Math.random() * 900000);
-      setValidatedCode(generatedCode);
-
       onAddLead({
         fullName: formData.fullName,
         email: formData.email,
@@ -90,7 +87,7 @@ export default function BrochureForm({ onAddLead, preselectedUnit }: BrochureFor
 
       setLoading(false);
       setFormSubmitted(true);
-    }, 1200);
+    }, 600);
   };
 
   return (

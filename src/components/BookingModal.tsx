@@ -79,8 +79,8 @@ export default function BookingModal({
         notes: "Unlocked Floor Plans",
       });
       setLoading(false);
-      setSubmitted(true);
-    }, 1000);
+      onClose();
+    }, 600);
   };
 
   return (
