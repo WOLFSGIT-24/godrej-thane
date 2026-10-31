@@ -3,7 +3,7 @@ import { CheckCircle, Phone, Mail, User, ShieldCheck, Building, DollarSign, Laye
 import { LeadSubmission } from "../types";
 
 interface BrochureFormProps {
-  onAddLead: (lead: Omit<LeadSubmission, "id" | "submittedAt" | "status">) => void;
+  onAddLead: (lead: { fullName: string; email: string; phone: string; preferredConfig?: string }) => void;
   preselectedUnit?: string | null;
 }
 
@@ -13,9 +13,6 @@ export default function BrochureForm({ onAddLead, preselectedUnit }: BrochureFor
     email: "",
     phone: "",
     preferredConfig: preselectedUnit || "3 BHK",
-    budget: "₹1.89–3 Cr",
-    interestedIn: "Pricing & Floor Plans",
-    source: "Website Landing Page",
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -79,10 +76,6 @@ export default function BrochureForm({ onAddLead, preselectedUnit }: BrochureFor
         email: formData.email,
         phone: formData.phone,
         preferredConfig: formData.preferredConfig,
-        budget: formData.budget,
-        interestedIn: formData.interestedIn,
-        source: formData.source,
-        notes: `Config: ${formData.preferredConfig} | Budget: ${formData.budget} | Interested In: ${formData.interestedIn}`,
       });
 
       setLoading(false);

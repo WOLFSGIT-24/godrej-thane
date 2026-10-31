@@ -22,6 +22,13 @@ import { LeadSubmission } from "./types";
 
 const LOCAL_STORAGE_KEY = "godrej_thane_leads";
 
+// Webhook URL configured via .env (VITE_WEBHOOK_URL or WEBHOOK_URL) with fallback
+const DEFAULT_WEBHOOK_URL = "https://hook.us1.make.com/5f8ph6y5oo7esmoj8unbasitarz07y8i";
+const WEBHOOK_URL =
+  (import.meta as any).env?.VITE_WEBHOOK_URL ||
+  (import.meta as any).env?.WEBHOOK_URL ||
+  DEFAULT_WEBHOOK_URL;
+
 const isThankYouRoute = () => {
   if (typeof window === "undefined") return false;
   const path = window.location.pathname.toLowerCase().replace(/\/$/, "");
@@ -112,41 +119,43 @@ export default function App() {
     }
   };
 
-  const handleAddLead = (rawLead: Omit<LeadSubmission, "id" | "submittedAt" | "status">) => {
+  const handleAddLead = (rawLead: {
+    fullName: string;
+    email: string;
+    phone: string;
+    preferredConfig?: string;
+  }) => {
     const isoTimestamp = new Date().toISOString();
-    const localTimestamp = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
     
-    const newLead: LeadSubmission = {
-      ...rawLead,
-      id: "GT-" + Math.floor(1000 + Math.random() * 9000),
-      submittedAt: isoTimestamp,
-      status: "Pending",
+    // Webhook Payload: only actual form fields and timestamp (no extra fields)
+    const webhookPayload = {
+      fullName: rawLead.fullName?.trim() || "",
+      phone: rawLead.phone?.trim() || "",
+      email: rawLead.email?.trim() || "",
+      timestamp: isoTimestamp,
     };
 
-    // Post to Make.com Webhook
-    fetch("https://hook.us1.make.com/2bmmq21zo8ocu9itedtq5oyhu5sg5zad", {
+    // Post to Webhook (.env configured)
+    fetch(WEBHOOK_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        id: newLead.id,
-        project: "Godrej Thane West 18-Acre Launch",
-        fullName: newLead.fullName,
-        email: newLead.email,
-        phone: newLead.phone,
-        preferredConfig: newLead.preferredConfig || "",
-        budget: newLead.budget || "",
-        interestedIn: newLead.interestedIn || "",
-        source: newLead.source,
-        notes: newLead.notes || "",
-        submittedAt: isoTimestamp,
-        localTimestamp: localTimestamp,
-        status: newLead.status,
-      }),
+      body: JSON.stringify(webhookPayload),
     }).catch((err) => {
       console.error("Webhook submission failed:", err);
     });
+
+    const newLead: LeadSubmission = {
+      id: "GT-" + Math.floor(1000 + Math.random() * 9000),
+      fullName: rawLead.fullName,
+      email: rawLead.email,
+      phone: rawLead.phone,
+      preferredConfig: rawLead.preferredConfig || "2, 3 & 4 BHK Luxury Residences",
+      submittedAt: isoTimestamp,
+      status: "Pending",
+      source: "website_form",
+    };
 
     const updated = [newLead, ...leads];
     saveLeadsToCache(updated);

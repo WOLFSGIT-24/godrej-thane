@@ -13,9 +13,6 @@ export default function OfferModal({ isOpen, onClose, onAddLead }: OfferModalPro
     email: "",
     phone: "",
     preferredConfig: "3 BHK",
-    budget: "₹1.89–3 Cr",
-    interestedIn: "Pricing & Floor Plans",
-    agree: true,
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -92,11 +89,6 @@ export default function OfferModal({ isOpen, onClose, onAddLead }: OfferModalPro
       email: formData.email,
       phone: formData.phone,
       preferredConfig: formData.preferredConfig,
-      budget: formData.budget,
-      interestedIn: formData.interestedIn,
-      source: "popup_prelaunch_form",
-      status: "Pending",
-      notes: `Config: ${formData.preferredConfig} | Budget: ${formData.budget} | Interested In: ${formData.interestedIn}`,
     });
     
     setLoading(false);

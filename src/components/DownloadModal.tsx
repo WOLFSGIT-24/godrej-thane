@@ -78,8 +78,6 @@ export default function DownloadModal({
         fullName: formData.fullName,
         email: formData.email,
         phone: formData.phone,
-        source: "brochure_download_modal",
-        notes: "Requested brochure download via popup.",
       });
       setLoading(false);
       handleDownloadBrochure();

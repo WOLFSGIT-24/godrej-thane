@@ -75,8 +75,7 @@ export default function BookingModal({
         fullName: formData.fullName,
         email: formData.email,
         phone: formData.phone,
-        source: "floor_plan_enquiry",
-        notes: "Unlocked Floor Plans",
+        preferredConfig: formData.unitType,
       });
       setLoading(false);
       onClose();
