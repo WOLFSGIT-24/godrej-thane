@@ -23,7 +23,7 @@ import { LeadSubmission } from "./types";
 const LOCAL_STORAGE_KEY = "godrej_thane_leads";
 
 // Webhook URL configured via .env (VITE_WEBHOOK_URL or WEBHOOK_URL) with fallback
-const DEFAULT_WEBHOOK_URL = "https://hook.us1.make.com/5f8ph6y5oo7esmoj8unbasitarz07y8i";
+const DEFAULT_WEBHOOK_URL = "https://hook.us1.make.com/jzsrqau7ive5s4orhsj9h09a12fdnyjo";
 const WEBHOOK_URL =
   (import.meta as any).env?.VITE_WEBHOOK_URL ||
   (import.meta as any).env?.WEBHOOK_URL ||
