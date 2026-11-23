@@ -259,7 +259,7 @@ export default function ThankYou({ lead, onBackToHome }: ThankYouProps) {
             Disclaimer: The information provided is for general inquiry and guidance on the upcoming Godrej Thane development. Project specifications, elevations, and images are artist impressions for conceptual understanding.
           </p>
           <p className="text-[10px] text-white/40 pt-2 border-t border-white/10">
-            © {new Date().getFullYear()} Godrej Thane West. All Rights Reserved.
+            © {new Date().getFullYear()} Godrej Thane West. All Rights Reserved. | Managed by Growthnest Consulting
           </p>
         </div>
       </footer>

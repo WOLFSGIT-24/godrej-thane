@@ -124,6 +124,7 @@ export default function Footer({ onOpenPrivacy, onOpenTerms }: FooterProps = {})
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pt-4 border-t border-white/5 text-[11px]">
             <div>
               <p>© {new Date().getFullYear()} Godrej Properties Launch Portal. All rights reserved.</p>
+              <p className="text-white/50 mt-1">Managed by Growthnest Consulting</p>
             </div>
             <div className="flex items-center gap-4">
               <button 
